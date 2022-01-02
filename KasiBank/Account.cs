@@ -9,7 +9,7 @@ namespace KasiATM
     public class Account
     {
         public double DailyWithdrawalLimit { get; set; } = 600;
-        private double Balance { get; set; }
+        private double Balance { get; }
 
         public Account(double openingBalance)
         {
@@ -19,6 +19,12 @@ namespace KasiATM
         public double Deposit(double amount)
         {
             return Balance + amount;            
+        }
+
+        public double ViewBalance()
+        {
+
+            return Balance;
         }
 
         public double Withdraw(double amount)

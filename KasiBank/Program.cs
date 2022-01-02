@@ -22,6 +22,7 @@ namespace KasiATM
             var serviceChoice = @"
 1. Deposit
 2. Withdraw
+3. View Balance
 ";
             Console.WriteLine(serviceChoice);
             var acc = new Account(5000);
@@ -42,6 +43,17 @@ namespace KasiATM
                 var currentBalance = acc.Withdraw(withdrawalAmount);
                 var message = $"You withdrew: R{withdrawalAmount}. Your current balance is: {currentBalance}";
                 NotificationService.SendMessage(true, "lg.setlhodi@gmail.com", "0764591933", message);
+            }
+            //TODO: ADD FEATURE/FUNCTIONALITY TO VIEW BALANCE
+
+            else if (selectedService == "3")
+            {
+                
+               // var balances = new Account(balance);
+             //   acc.ViewBalance();
+                Console.WriteLine($"Your balance is: R{acc.ViewBalance()}");
+
+               // Console.WriteLine($"Your balance is: R{acc.Balance}");
             }
 
         }
